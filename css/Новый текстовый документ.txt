@@ -1,0 +1,40 @@
+$small-width: 31%
+$big-width: 38%
+
+body
+	margin: 0
+	display: flex
+	flex-wrap: wrap
+	min-height: 100vh
+	height: 100%
+
+	section
+		min-height: 50%
+
+		&.big-width
+			min-width: $small-width + $big-width
+
+		&.middle-width
+			min-width: $big-width
+
+		&.small-width
+			min-width: $small-width
+
+		&.main-screen
+			background: #e9eae2
+
+		&.menu-screen
+			background: #7acec3
+
+		&.project-screen
+			background: #ebb240
+
+		&.menu-screen,
+		&.project-screen
+			background-image: linear-gradient(to bottom right, transparent calc(50% - 1px), #fff, transparent calc(50% + 1px))
+
+		&.item-screen
+			background: #fff
+
+			&.grey
+				background: #dfe0d9

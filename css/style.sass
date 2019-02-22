@@ -1,0 +1,74 @@
+$small-width: 31%
+$big-width: 38%
+
+body
+	margin: 0
+	display: flex
+	flex-wrap: wrap
+	min-height: 100vh
+	height: 100%
+
+	section
+		min-height: 50%
+
+		&.big-width
+			min-width: $small-width + $big-width
+
+		&.middle-width
+			min-width: $big-width
+
+		&.small-width
+			min-width: $small-width
+
+		&.main-screen
+			background: #e9eae2
+
+		&.menu-screen
+			background: #7acec3
+
+		&.project-screen
+			background: #ebb240
+
+		&.menu-screen,
+		&.project-screen
+			background-image: linear-gradient(to bottom right, transparent calc(50% - 1px), #fff, transparent calc(50% + 1px))
+
+		&.item-screen
+			background: #fff
+
+			&.grey
+				background: #dfe0d9
+
+		@media screen and (max-width: 992px)
+			height: 50vh
+
+			&.big-width,
+			&.middle-width,
+			&.small-width
+				width: 50%
+
+			&.main-screen,
+			&.item-screen,
+			&.items-block
+				width: 100%
+
+			&.items-block
+				display: flex
+
+				&.item-screen
+					width: 50%
+
+		@media screen and (max-width: 576px)
+			min-height: 50vh
+
+			&.big-width,
+			&.middle-width,
+			&.small-width
+				width: 100%
+
+			&.main-screen,
+			&.items-block
+				height: 100vh
+
+			&.items-block
+				flex-direction: column

@@ -1,13 +1,29 @@
 a {
   text-decoration: none;
-  color: unset; }
+  color: unset;
+  transition: 0.3s; }
+  a.arrow_w, a.arrow_y {
+    position: relative; }
+    a.arrow_w:before, a.arrow_y:before {
+      position: absolute;
+      left: -27.66px;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: url("../img/icons/arrow_icon_w.png") no-repeat; }
+    a.arrow_w:hover, a.arrow_y:hover {
+      color: #000; }
+      a.arrow_w:hover:before, a.arrow_y:hover:before {
+        content: ""; }
+  a.arrow_y:before {
+    background: url("../img/icons/arrow_icon_y.png") no-repeat; }
 
 body {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
-  font-family: Roboto; }
+  font-family: "Roboto Condensed"; }
   body section {
     min-height: 50%;
     background-size: 100%; }
@@ -16,7 +32,8 @@ body {
     body section.middle-width {
       min-width: 38%; }
     body section.small-width {
-      min-width: 31%; }
+      min-width: 31%;
+      max-width: 31%; }
     body section.main-screen {
       background-color: #f1f1f1;
       display: flex;
@@ -119,11 +136,34 @@ body {
         bottom: 10%;
         left: 30%; }
     body section.project-screen {
-      background-color: #ebb240; }
+      background-color: #ebb240;
+      text-transform: uppercase;
+      color: #fff;
+      position: relative; }
+      body section.project-screen .projets-links {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        position: absolute;
+        left: 10%;
+        top: 50%; }
+      body section.project-screen h1 {
+        text-transform: uppercase;
+        font-size: 3em;
+        position: absolute;
+        top: 80%;
+        right: 10%; }
     body section.menu-screen, body section.project-screen {
       background-image: linear-gradient(to bottom right, transparent calc(50% - .5px), #fff, transparent calc(50% + .5px)); }
     body section.item-screen {
-      background: #fff; }
+      background: #fff;
+      display: flex;
+      color: #333333; }
+      body section.item-screen .uppercase {
+        text-transform: uppercase; }
+      body section.item-screen h1 {
+        text-transform: uppercase;
+        font-size: 24px; }
       body section.item-screen.grey {
         background-color: #dfe0d9; }
     body section img {

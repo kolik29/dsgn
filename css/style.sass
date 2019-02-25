@@ -1,11 +1,16 @@
 $small-width: 31%
 $big-width: 38%
 
+a
+	text-decoration: none
+	color: unset
+
 body
 	margin: 0
 	display: flex
 	flex-wrap: wrap
 	min-height: 100vh
+	font-family: Roboto
 
 	section
 		min-height: 50%
@@ -22,9 +27,131 @@ body
 
 		&.main-screen
 			background-color: #f1f1f1
+			display: flex
+			justify-content: space-around
+			align-items: center
+			font-size: 18px
+			color: #393d3c
+
+			.logo
+				display: flex
+				flex-direction: column
+
+			.social
+				display: flex
+				justify-content: space-around
+				align-items: center
+				margin-top: 3em
+				padding: 0 1em
+
+			img
+				max-width: 100%
 
 		&.menu-screen
 			background-color: #7acec3
+			position: relative
+			display: flex
+			justify-content: center
+			align-items: start
+
+			.menu-button
+				margin-top: 6em
+				position: relative
+
+				label
+					width: 6em
+					height: 6em
+					border: 3px solid #fff
+					cursor: pointer
+					display: flex
+					justify-content: center
+					flex-direction: column
+					align-items: center
+					transition: .3s
+
+					span
+						margin: 3px 0
+						width: 3em
+						height: 3px
+						display: block
+						background: #fff
+						transition: .3s
+
+					&:hover
+						border-color: #f8c255
+
+						span
+							background: #f8c255
+
+				#checkbox
+					display: none
+
+					&:checked
+						+ label
+							background: #f8c255
+							border-color: #f8c255
+
+							span
+								background: #fff
+
+								&:nth-child(1)
+									transform: translateY(9px) rotate(45deg)
+
+								&:nth-child(2)
+									opacity: 0
+
+								&:nth-child(3)
+									transform: translateY(-9px) rotate(-45deg)
+
+						~ .menu
+							opacity: 1
+
+				.menu
+					height: 100%
+					position: absolute
+					background: #f8c255
+					right: 100%
+					top: 0
+					opacity: 0
+					transition: .3s
+					display: flex
+					text-transform: uppercase
+					color: #fff
+					align-items: center
+
+					@media screen and (max-width: 992px)
+						flex-direction: column
+						height: unset
+						right: unset
+						left: 100%
+
+						a
+							line-height: 6em
+
+					@media screen and (max-width: 576px)
+						height: unset
+						right: unset
+						left: unset
+						top: 100%
+
+
+
+
+					a
+						padding: 0 2em
+
+			.address,
+			.phone
+				position: absolute
+				color: #fff
+
+			.address
+				left: 10%
+				bottom: 30%
+
+			.phone
+				bottom: 10%
+				left: 30%
 
 		&.project-screen
 			background-color: #ebb240
@@ -38,24 +165,6 @@ body
 
 			&.grey
 				background-color: #dfe0d9
-
-		&.main-screen,
-		&.fondue,
-		&.plotter,
-		&.armchair
-			background-repeat: no-repeat
-
-		&.main-screen
-			background-image: url('../img/chair.png')
-
-		&.fondue
-			background-image: url('../img/lamp.png')
-
-		&.plotter
-			background-image: url('../img/plotter.png')
-
-		&.armchair
-			background-image: url('../img/arcmchair.png')
 
 		img
 			max-height: 100%
@@ -86,6 +195,9 @@ body
 			&.middle-width,
 			&.small-width
 				width: 100%
+
+			&.main-screen
+				flex-direction: column
 
 			&.main-screen,
 			&.items-block

@@ -1,8 +1,13 @@
+a {
+  text-decoration: none;
+  color: unset; }
+
 body {
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  min-height: 100vh; }
+  min-height: 100vh;
+  font-family: Roboto; }
   body section {
     min-height: 50%;
     background-size: 100%; }
@@ -13,9 +18,106 @@ body {
     body section.small-width {
       min-width: 31%; }
     body section.main-screen {
-      background-color: #f1f1f1; }
+      background-color: #f1f1f1;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-size: 18px;
+      color: #393d3c; }
+      body section.main-screen .logo {
+        display: flex;
+        flex-direction: column; }
+      body section.main-screen .social {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 3em;
+        padding: 0 1em; }
+      body section.main-screen img {
+        max-width: 100%; }
     body section.menu-screen {
-      background-color: #7acec3; }
+      background-color: #7acec3;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: start; }
+      body section.menu-screen .menu-button {
+        margin-top: 6em;
+        position: relative; }
+        body section.menu-screen .menu-button label {
+          width: 6em;
+          height: 6em;
+          border: 3px solid #fff;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          flex-direction: column;
+          align-items: center;
+          transition: 0.3s; }
+          body section.menu-screen .menu-button label span {
+            margin: 3px 0;
+            width: 3em;
+            height: 3px;
+            display: block;
+            background: #fff;
+            transition: 0.3s; }
+          body section.menu-screen .menu-button label:hover {
+            border-color: #f8c255; }
+            body section.menu-screen .menu-button label:hover span {
+              background: #f8c255; }
+        body section.menu-screen .menu-button #checkbox {
+          display: none; }
+          body section.menu-screen .menu-button #checkbox:checked + label {
+            background: #f8c255;
+            border-color: #f8c255; }
+            body section.menu-screen .menu-button #checkbox:checked + label span {
+              background: #fff; }
+              body section.menu-screen .menu-button #checkbox:checked + label span:nth-child(1) {
+                transform: translateY(9px) rotate(45deg); }
+              body section.menu-screen .menu-button #checkbox:checked + label span:nth-child(2) {
+                opacity: 0; }
+              body section.menu-screen .menu-button #checkbox:checked + label span:nth-child(3) {
+                transform: translateY(-9px) rotate(-45deg); }
+          body section.menu-screen .menu-button #checkbox:checked ~ .menu {
+            opacity: 1; }
+        body section.menu-screen .menu-button .menu {
+          height: 100%;
+          position: absolute;
+          background: #f8c255;
+          right: 100%;
+          top: 0;
+          opacity: 0;
+          transition: 0.3s;
+          display: flex;
+          text-transform: uppercase;
+          color: #fff;
+          align-items: center; }
+          @media screen and (max-width: 992px) {
+            body section.menu-screen .menu-button .menu {
+              flex-direction: column;
+              height: unset;
+              right: unset;
+              left: 100%; }
+              body section.menu-screen .menu-button .menu a {
+                line-height: 6em; } }
+          @media screen and (max-width: 576px) {
+            body section.menu-screen .menu-button .menu {
+              height: unset;
+              right: unset;
+              left: unset;
+              top: 100%; } }
+          body section.menu-screen .menu-button .menu a {
+            padding: 0 2em; }
+      body section.menu-screen .address,
+      body section.menu-screen .phone {
+        position: absolute;
+        color: #fff; }
+      body section.menu-screen .address {
+        left: 10%;
+        bottom: 30%; }
+      body section.menu-screen .phone {
+        bottom: 10%;
+        left: 30%; }
     body section.project-screen {
       background-color: #ebb240; }
     body section.menu-screen, body section.project-screen {
@@ -24,16 +126,6 @@ body {
       background: #fff; }
       body section.item-screen.grey {
         background-color: #dfe0d9; }
-    body section.main-screen, body section.fondue, body section.plotter, body section.armchair {
-      background-repeat: no-repeat; }
-    body section.main-screen {
-      background-image: url("../img/chair.png"); }
-    body section.fondue {
-      background-image: url("../img/lamp.png"); }
-    body section.plotter {
-      background-image: url("../img/plotter.png"); }
-    body section.armchair {
-      background-image: url("../img/arcmchair.png"); }
     body section img {
       max-height: 100%; }
     @media screen and (max-width: 992px) {
@@ -52,6 +144,8 @@ body {
         min-height: 50vh; }
         body section.big-width, body section.middle-width, body section.small-width {
           width: 100%; }
+        body section.main-screen {
+          flex-direction: column; }
         body section.main-screen, body section.items-block {
           height: 100vh; }
         body section.items-block {

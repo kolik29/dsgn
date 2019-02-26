@@ -8,7 +8,6 @@ a {
       position: absolute;
       left: -27.66px;
       top: 0;
-      height: 100%;
       width: 100%;
       background: url("../img/icons/arrow_icon_w.png") no-repeat; }
     a.arrow_w:hover, a.arrow_y:hover {
@@ -18,6 +17,12 @@ a {
   a.arrow_y:before {
     background: url("../img/icons/arrow_icon_y.png") no-repeat; }
 
+h1 {
+  margin: 0; }
+
+h2 {
+  margin: 5% 0; }
+
 body {
   margin: 0;
   display: flex;
@@ -25,14 +30,14 @@ body {
   min-height: 100vh;
   font-family: "Roboto Condensed"; }
   body section {
-    min-height: 50%;
     background-size: 100%; }
+    body section.big-width, body section.middle-width, body section.small-width {
+      width: 100%; }
     body section.big-width {
-      min-width: 69%; }
+      max-width: 69%; }
     body section.middle-width {
-      min-width: 38%; }
+      max-width: 38%; }
     body section.small-width {
-      min-width: 31%;
       max-width: 31%; }
     body section.main-screen {
       background-color: #f1f1f1;
@@ -59,7 +64,7 @@ body {
       justify-content: center;
       align-items: start; }
       body section.menu-screen .menu-button {
-        margin-top: 6em;
+        margin-top: 10%;
         position: relative; }
         body section.menu-screen .menu-button label {
           width: 6em;
@@ -128,7 +133,8 @@ body {
       body section.menu-screen .address,
       body section.menu-screen .phone {
         position: absolute;
-        color: #fff; }
+        color: #fff;
+        font-size: 1em; }
       body section.menu-screen .address {
         left: 10%;
         bottom: 30%; }
@@ -158,37 +164,61 @@ body {
     body section.item-screen {
       background: #fff;
       display: flex;
-      color: #333333; }
+      color: #333333;
+      justify-content: space-around; }
       body section.item-screen .uppercase {
         text-transform: uppercase; }
+      body section.item-screen img {
+        align-self: center; }
       body section.item-screen h1 {
         text-transform: uppercase;
-        font-size: 24px; }
+        font-size: 24px;
+        width: 100%; }
       body section.item-screen.grey {
         background-color: #dfe0d9; }
-    body section img {
-      max-height: 100%; }
+      body section.item-screen .text-block {
+        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 5% 0 5% 10%;
+        font-size: 12px; }
+        body section.item-screen .text-block a {
+          text-transform: uppercase;
+          font-size: 16px; }
+          body section.item-screen .text-block a:hover {
+            color: black; }
+        body section.item-screen .text-block .like {
+          text-align: center;
+          color: #ff0000;
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          body section.item-screen .text-block .like div {
+            background: url("../img/icons/heart.png") no-repeat;
+            transition: 0.3s;
+            width: 24px;
+            height: 21px; }
+            body section.item-screen .text-block .like div:hover {
+              background: url("../img/icons/heart_r.png") no-repeat; }
     @media screen and (max-width: 992px) {
-      body section {
-        height: 50vh; }
-        body section.big-width, body section.middle-width, body section.small-width {
-          width: 50%; }
-        body section.main-screen, body section.item-screen, body section.items-block {
-          width: 100%; }
-        body section.items-block {
-          display: flex; }
-          body section.items-block.item-screen {
-            width: 50%; } }
-    @media screen and (max-width: 576px) {
-      body section {
+      body section.big-width, body section.middle-width, body section.small-width {
+        max-width: 50%;
         min-height: 50vh; }
-        body section.big-width, body section.middle-width, body section.small-width {
-          width: 100%; }
-        body section.main-screen {
-          flex-direction: column; }
-        body section.main-screen, body section.items-block {
-          height: 100vh; }
-        body section.items-block {
-          flex-direction: column; } }
+      body section.main-screen, body section.item-screen, body section.items-block {
+        width: 100%; }
+      body section.items-block {
+        display: flex; }
+        body section.items-block.item-screen {
+          max-width: 50%; } }
+    @media screen and (max-width: 576px) {
+      body section.big-width, body section.middle-width, body section.small-width {
+        max-width: 100%; }
+      body section.main-screen {
+        flex-direction: column; }
+      body section.main-screen {
+        height: 100vh; }
+      body section.items-block {
+        flex-direction: column; } }
 
 /*# sourceMappingURL=style.css.map */

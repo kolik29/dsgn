@@ -277,6 +277,9 @@ body
 					transform: scale(1.1)
 
 		@media screen and (max-width: 992px)
+			&.main-screen
+				min-width: 100vw
+
 			&.big-width,
 			&.middle-width,
 			&.small-width
@@ -288,11 +291,16 @@ body
 			&.items-block
 				width: 100%
 
+			&.item-screen
+				max-width: 100vw
+
 			&.items-block
 				display: flex
+				min-width: 100vw
 
-				&.item-screen
+				.item-screen
 					max-width: 50%
+					height: 100%
 
 		@media screen and (max-width: 576px)
 			&.big-width,
@@ -308,3 +316,6 @@ body
 
 			&.items-block
 				flex-direction: column
+
+				.item-screen
+					max-width: 100%

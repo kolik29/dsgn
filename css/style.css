@@ -9,6 +9,7 @@ a {
       left: -27.66px;
       top: 0;
       width: 100%;
+      height: 100%;
       background: url("../img/icons/arrow_icon_w.png") no-repeat; }
     a.arrow_w:hover, a.arrow_y:hover {
       color: #000; }
@@ -161,15 +162,19 @@ body {
         right: 10%; }
     body section.menu-screen, body section.project-screen {
       background-image: linear-gradient(to bottom right, transparent calc(50% - .5px), #fff, transparent calc(50% + .5px)); }
+    body section .item-screen {
+      height: 50%; }
     body section.item-screen {
       background: #fff;
       display: flex;
       color: #333333;
-      justify-content: space-around; }
+      justify-content: space-around;
+      overflow: hidden; }
       body section.item-screen .uppercase {
         text-transform: uppercase; }
       body section.item-screen img {
-        align-self: center; }
+        align-self: center;
+        transition: 0.5s; }
       body section.item-screen h1 {
         text-transform: uppercase;
         font-size: 24px;
@@ -201,6 +206,8 @@ body {
             height: 21px; }
             body section.item-screen .text-block .like div:hover {
               background: url("../img/icons/heart_r.png") no-repeat; }
+      body section.item-screen:hover img {
+        transform: scale(1.1); }
     @media screen and (max-width: 992px) {
       body section.big-width, body section.middle-width, body section.small-width {
         max-width: 50%;

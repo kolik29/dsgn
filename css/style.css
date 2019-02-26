@@ -131,6 +131,8 @@ body {
               top: 100%; } }
           body section.menu-screen .menu-button .menu a {
             padding: 0 2em; }
+            body section.menu-screen .menu-button .menu a:hover {
+              color: #fdeccb; }
       body section.menu-screen .address,
       body section.menu-screen .phone {
         position: absolute;

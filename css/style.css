@@ -211,6 +211,11 @@ body {
       body section.item-screen:hover img {
         transform: scale(1.1); }
     @media screen and (max-width: 992px) {
+      body section .text-block {
+        margin: 1% !important;
+        width: 50vw; }
+        body section .text-block ~ img {
+          width: 50vw; }
       body section.main-screen {
         min-width: 100vw; }
       body section.big-width, body section.middle-width, body section.small-width {
